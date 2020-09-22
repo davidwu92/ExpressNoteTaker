@@ -1,12 +1,10 @@
-const db = require("../db/db.json")
+const path = require("path")
 
 module.exports = (app)=>{
   app.get('/notes', (req, res)=>{
-    console.log(req)
-    res.json("You're getting notes.")
+    res.sendFile(path.join(__dirname, "../../client/public/notes.html"))
   })
   app.get('*', (req, res)=>{
-    console.log(req)
-    res.json("Here's the index.html file.")
+    res.sendFile(path.join(__dirname, "../../client/public/index.html"))
   })
 }

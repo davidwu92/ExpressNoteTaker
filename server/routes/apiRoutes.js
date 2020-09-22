@@ -7,6 +7,7 @@ module.exports = (app)=>{
   })
   app.post("/api/notes", (req, res)=>{
     //should receive a note from req.body, save into db.json file, return the new note to client.
+    db.savedNotes.push(req.body)
     res.send("db.json notes")
   })
   app.delete("/api/notes", (req, res)=>{
