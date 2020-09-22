@@ -10,7 +10,7 @@ module.exports = (app)=>{
     db.savedNotes.push(req.body)
     res.send("db.json notes")
   })
-  app.delete("/api/notes", (req, res)=>{
+  app.delete("/api/notes:id", (req, res)=>{
     //should receive the ID of a note, delete from db.json
     res.send("Deleted the note.")
   })
